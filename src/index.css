@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fdfdfd;
+  --border-color: #e5e5e5;
+  --text-primary: #111111;
+  --text-secondary: #777777;
+  --accent: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, .serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+/* Minimalist Form Elements */
+input, textarea {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  background: transparent;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border-bottom-color: var(--text-primary);
+}
+
+input::placeholder {
+  color: #a0a0a0;
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 16px 32px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #333333;
+}
+
+/* E-Commerce Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px 20px;
+}
+
+/* Minimalist Selection Chips */
+.select-chip {
+  padding: 10px 24px;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  background: transparent;
+}
+
+.select-chip:hover {
+  border-color: #b0b0b0;
+}
+
+.select-chip.selected {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+/* Pinterest Masonry Layout */
+.masonry-grid {
+  column-count: 5;
+  column-gap: 16px;
+}
+
+@media (max-width: 1400px) {
+  .masonry-grid { column-count: 4; }
+}
+
+@media (max-width: 1000px) {
+  .masonry-grid { column-count: 3; }
+}
+
+@media (max-width: 600px) {
+  .masonry-grid { column-count: 2; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e0e0e0; }
